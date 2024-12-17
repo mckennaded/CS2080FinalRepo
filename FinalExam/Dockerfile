@@ -2,11 +2,12 @@ FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y vim nginx
 
-COPY testScript.sh /testScript.sh
+COPY script.sh /script.sh
 
-RUN chmod +x /testScript.sh
+RUN chmod +x /script.sh
 
 EXPOSE 80
 
-# CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
+
 
